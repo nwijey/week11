@@ -30,14 +30,14 @@ resource "aws_security_group" "web-sg" {
     from_port   = 8080
     to_port     = 8080
     protocol    = "tcp"
-    cidr_blocks = ["192.160.10.0/0"]
+    cidr_blocks = ["192.160.10.0/80"]
   }
   // connectivity to ubuntu mirrors is required to run `apt-get update` and `apt-get install apache2`
   egress {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
-    cidr_blocks = ["190.170.20.0/0"]
+    cidr_blocks = ["190.170.20.0/80"]
   }
 }
 
